@@ -1,6 +1,6 @@
 class PeopleList
   def self.list_of_people
-   {'1' => { nombre:'Tomas',
+   @list_of_people = {'1' => { nombre:'Tomas',
             apellido: 'Velasquez',
             cedula: 10_229_631,
             beneficiarios:[{nombre:'Pepito',
@@ -31,7 +31,8 @@ class PeopleList
     apellido = gets.chomp
     puts 'Digite la cedula'
     cedula = gets.chomp
-
-    list_of_people[id_hash] = {nombre: nombre, apellido: apellido, cedula: cedula.to_i}
+    self.list_of_people
+    @list_of_people[id_hash] = {nombre: nombre, apellido: apellido, cedula: cedula.to_i}
+    @list_of_people
   end
 end
