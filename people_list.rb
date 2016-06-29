@@ -10,7 +10,7 @@ class PeopleList
      '2' => {nombre:'Mateo',
              apellido: 'Velasquez',
              cedula: 1045876,
-             beneficiarios:[{nombre:'Marua',
+             beneficiarios:[{nombre:'Maruja',
                              apellido: 'Gaviria',
                              cedula: 3_254_789}]},
 
@@ -22,5 +22,16 @@ class PeopleList
                              cedula: 10_277_214 }] }
     }
   end
-  
+  def self.new_person
+    puts 'Digite el id'
+    id_hash = gets.chomp
+    puts 'Digite el nombre'
+    nombre = gets.chomp
+    puts 'Digite el apellido'
+    apellido = gets.chomp
+    puts 'Digite la cedula'
+    cedula = gets.chomp
+
+    list_of_people[id_hash] = {nombre: nombre, apellido: apellido, cedula: cedula.to_i}
+  end
 end
